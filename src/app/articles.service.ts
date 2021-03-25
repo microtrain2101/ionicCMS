@@ -38,4 +38,10 @@ export class ArticlesService {
   updateArticle(article: Article): Observable<Article>{
     return this.http.put<Article>(this.url, article, httpOptions);
   }
+  deleteArticle(id:String): Observable<Article> {
+    return this.http.delete<Article>(`${this.url}/${id}`, httpOptions);
+  }
+  createArticle(article: Article): Observable<Article> {
+    return this.http.post<Article>(this.url, article, httpOptions);
+  }
 }
